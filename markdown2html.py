@@ -8,15 +8,15 @@ import os.path as path
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print('Usage: ./markdown2html.py README.md README.html',
-file=sys.stderr)
+        sys.stderr.write('Usage: ./markdown2html.py README.md README.html\n')
         exit(1)
-    if not path.exists(sys.argv[1]):
-        print('Missing <filename>', file=sys.stderr)
+    elif not path.exists(sys.argv[1]):
+        sys.stderr.write('Missing ' + sys.argv[1] + '\n')
         exit(1)
-    markdown.markdownFromFile(
-        input=sys.argv[1],
-        output=sys.argv[2],
-        encoding='utf-8',
-    )
-    exit(0)
+    else:
+        markdown.markdownFromFile(
+            input=sys.argv[1],
+            output=sys.argv[2],
+            encoding='utf-8',
+        )
+        exit(0)
