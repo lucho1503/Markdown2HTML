@@ -20,8 +20,8 @@ if __name__ == "__main__":
         #    output=sys.argv[2],
         #    encoding='utf-8',
         #)
-        #exit(0)
-        pass
+        exit(0)
+        #pass
 
     with open(sys.argv[1], 'r') as r:
         for line in r.readlines():
